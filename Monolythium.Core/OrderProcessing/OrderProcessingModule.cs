@@ -1,17 +1,19 @@
 ﻿using Monolythium.DataAccess;
-using Ninject.Modules;
+using Monolythium.DependencyManagement;
 
 namespace Monolythium.Core.OrderProcessing
 {
-    public class OrderProcessingModule : NinjectModule
+    public class OrderProcessingModule : BaseDependencyModule
     {
+        public override IEnumerable<BaseDependencyModule> GetDependencies()
+        {
+            return new[] { new DataAccessModule() };
+        }
+
         public override void Load()
         {
-            Kernel.Load(new[] { new DataAccessModule() });
-
             Bind<IOrderMaker>().To<OrderMaker>();
             Bind<IOrderAnnihilator>().To<OrderAnnihilator>();
-
         }
     }
 }

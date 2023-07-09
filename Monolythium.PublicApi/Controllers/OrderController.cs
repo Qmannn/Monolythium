@@ -14,7 +14,7 @@ namespace Monolythium.PublicApi.Controllers
 
         public void CreateOrder(CreateOrderRequestDto createOrderRequestDto)
         {
-            _requestHandlersFactory.GetCreateOrderHandler().CreateOrder(createOrderRequestDto);
+            _requestHandlersFactory.CreateCreateOrderHandler().CreateOrder(createOrderRequestDto);
         }
 
         public void CancelOrder(int orderId)

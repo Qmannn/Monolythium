@@ -2,9 +2,9 @@
 
 namespace Monolythium.PublicApi.Services.Factories
 {
-    internal interface IRequestHandlersFactory
+    public interface IRequestHandlersFactory
     {
-        CreateOrderHandler GetCreateOrderHandler();
+        CreateOrderHandler CreateCreateOrderHandler();
         CancelOrderHandler GetCancelOrderHandler();
     }
 }

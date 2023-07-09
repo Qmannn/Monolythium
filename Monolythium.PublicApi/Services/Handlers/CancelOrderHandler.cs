@@ -4,7 +4,7 @@ using Monolythium.DataAccess.Facades;
 
 namespace Monolythium.PublicApi.Services.Handlers
 {
-    internal class CancelOrderHandler
+    public class CancelOrderHandler
     {
         private readonly IOrderFacade _orderFacade;
 

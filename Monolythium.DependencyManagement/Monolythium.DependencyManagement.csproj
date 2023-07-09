@@ -10,8 +10,4 @@
     <PackageReference Include="Ninject" Version="3.3.6" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Monolythium.DependencyManagement\Monolythium.DependencyManagement.csproj" />
-  </ItemGroup>
-
 </Project>

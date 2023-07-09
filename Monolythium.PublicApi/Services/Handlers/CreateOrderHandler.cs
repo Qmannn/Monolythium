@@ -4,7 +4,7 @@ using Monolythium.PublicApi.Dto;
 
 namespace Monolythium.PublicApi.Services.Handlers
 {
-    internal class CreateOrderHandler
+    public class CreateOrderHandler
     {
         private readonly IOrderMaker _orderMaker;
 

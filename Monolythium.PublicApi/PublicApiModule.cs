@@ -1,25 +1,30 @@
 ﻿using Monolythium.Core.OrderProcessing;
 using Monolythium.DataAccess;
+using Monolythium.DependencyManagement;
 using Monolythium.PublicApi.Controllers;
 using Monolythium.PublicApi.Services.Factories;
 using Monolythium.PublicApi.Services.Handlers;
 using Ninject.Extensions.Factory;
-using Ninject.Modules;
 
 namespace Monolythium.PublicApi
 {
-    public class PublicApiModule : NinjectModule
+    public class PublicApiModule : BaseDependencyModule
     {
+        public override IEnumerable<BaseDependencyModule> GetDependencies()
+        {
+            return new[]
+            {
+                new OrderProcessingModule(),
+                (BaseDependencyModule)new DataAccessModule()
+            };
+        }
+
         public override void Load()
         {
-            Kernel.Load(new[] {
-                (INinjectModule)new OrderProcessingModule(),
-                (INinjectModule)new DataAccessModule() });
-
             Bind<IOrderController>().To<OrderController>();
 
-            Bind<CreateOrderHandler>();
-            Bind<CancelOrderHandler>();
+            Bind<CreateOrderHandler>().To<CreateOrderHandler>();
+            Bind<CancelOrderHandler>().ToSelf();
 
             Bind<IRequestHandlersFactory>().ToFactory();
         }

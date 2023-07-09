@@ -1,10 +1,9 @@
 ﻿using Monolythium.DataAccess.Facades;
-using Ninject.Modules;
-using Ninject.Syntax;
+using Monolythium.DependencyManagement;
 
 namespace Monolythium.DataAccess
 {
-    public class DataAccessModule : NinjectModule
+    public class DataAccessModule : BaseDependencyModule
     {
         public override void Load()
         {
