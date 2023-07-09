@@ -11,6 +11,7 @@ namespace Monolythium.Core.OrderProcessing
 
             Bind<IOrderMaker>().To<OrderMaker>();
             Bind<IOrderAnnihilator>().To<OrderAnnihilator>();
+
         }
     }
 }
