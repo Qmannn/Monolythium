@@ -12,8 +12,8 @@ namespace Monolythium.Core.OrderProcessing
 
         public override void Load()
         {
-            Bind<IOrderMaker>().To<OrderMaker>();
-            Bind<IOrderAnnihilator>().To<OrderAnnihilator>();
+            Bind<IOrderMaker>().To<OrderMaker>().InLocalScope(BindingScopeStrategy);
+            Bind<IOrderAnnihilator>().To<OrderAnnihilator>().InLocalScope(BindingScopeStrategy);
         }
     }
 }

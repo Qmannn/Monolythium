@@ -21,10 +21,10 @@ namespace Monolythium.PublicApi
 
         public override void Load()
         {
-            Bind<IOrderController>().To<OrderController>();
+            Bind<IOrderController>().To<OrderController>().InLocalScope(BindingScopeStrategy);
 
-            Bind<CreateOrderHandler>().To<CreateOrderHandler>();
-            Bind<CancelOrderHandler>().ToSelf();
+            Bind<CreateOrderHandler>().To<CreateOrderHandler>().InLocalScope(BindingScopeStrategy);
+            Bind<CancelOrderHandler>().ToSelf().InLocalScope(BindingScopeStrategy);
 
             Bind<IRequestHandlersFactory>().ToFactory();
         }

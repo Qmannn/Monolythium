@@ -7,9 +7,7 @@ namespace Monolythium.DataAccess
     {
         public override void Load()
         {
-            // TODO: all services are registered use transient strategy. I would like to make customize strategy
-
-            Bind<IOrderFacade>().To<OrderFacade>();
+            Bind<IOrderFacade>().To<OrderFacade>().InLocalScope(BindingScopeStrategy);
         }
     }
 }
