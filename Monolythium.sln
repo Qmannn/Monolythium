@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium", "Monolythium\Monolythium.csproj", "{BE85DAE6-A483-47F9-A1F0-C983E1AFC1DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolythium", "Monolythium\Monolythium.csproj", "{BE85DAE6-A483-47F9-A1F0-C983E1AFC1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium.DataAccess", "Monolythium.DataAccess\Monolythium.DataAccess.csproj", "{2AA04ACC-29C2-4B8A-8681-013AA810EB57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolythium.DataAccess", "Monolythium.DataAccess\Monolythium.DataAccess.csproj", "{2AA04ACC-29C2-4B8A-8681-013AA810EB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium.PublicApi", "Monolythium.PublicApi\Monolythium.PublicApi.csproj", "{F1F44301-8C9A-40C6-9B9F-050132D288CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolythium.PublicApi", "Monolythium.PublicApi\Monolythium.PublicApi.csproj", "{F1F44301-8C9A-40C6-9B9F-050132D288CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium.Core", "Monolythium.Core\Monolythium.Core.csproj", "{E10074BB-9122-4947-B2F8-AC01FB24D337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolythium.Core", "Monolythium.Core\Monolythium.Core.csproj", "{E10074BB-9122-4947-B2F8-AC01FB24D337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium.DependencyManagement", "Monolythium.DependencyManagement\Monolythium.DependencyManagement.csproj", "{79E2539D-127B-48AD-A625-53BE71A95CDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monolythium.DependencyManagement", "Monolythium.DependencyManagement\Monolythium.DependencyManagement.csproj", "{79E2539D-127B-48AD-A625-53BE71A95CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monolythium.Api", "Monolythium.Api\Monolythium.Api.csproj", "{9F745A6B-ED4C-41F3-B330-F5BDE41B9A59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{79E2539D-127B-48AD-A625-53BE71A95CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E2539D-127B-48AD-A625-53BE71A95CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E2539D-127B-48AD-A625-53BE71A95CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F745A6B-ED4C-41F3-B330-F5BDE41B9A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F745A6B-ED4C-41F3-B330-F5BDE41B9A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F745A6B-ED4C-41F3-B330-F5BDE41B9A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F745A6B-ED4C-41F3-B330-F5BDE41B9A59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
