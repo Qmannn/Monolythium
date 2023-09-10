@@ -1,0 +1,19 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Monolythium.Core.OrderProcessing;
+using Monolythium.DataAccess;
+using Monolythium.PublicApi;
+
+namespace Monolythium
+{
+    internal static class CompositionRootServiceCollectionExtension
+    {
+        public static IServiceCollection AddApplicationRoot(this IServiceCollection services)
+        {
+            services.AddDataAccess();
+            services.AddOrderProcessing();
+            services.AddPublicApi();
+
+            return services;
+        }
+    }
+}

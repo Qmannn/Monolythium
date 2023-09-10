@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ninject" Version="3.3.6" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Monolythium.DataAccess\Monolythium.DataAccess.csproj" />
   </ItemGroup>
 

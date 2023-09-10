@@ -1,8 +1,8 @@
-using Monolythium.PublicApi;
+using Monolythium.Api;
 
 var builder = WebApplication.CreateBuilder();
-builder.Host.UseServiceProviderFactory(new NinjectServiceProviderFactory(services => services.BuildServiceProvider()));
 
+builder.Services.AddApplicationRoot();
 builder.Services.AddControllers();
 
 var app = builder.Build();
