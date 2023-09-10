@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Monolythium.PublicApi.Controllers;
+using Monolythium.PublicApi.CommandProcessing.Orders;
 
 namespace Monolythium.Api.Controllers
 {
@@ -8,19 +8,24 @@ namespace Monolythium.Api.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly IOrderController? _orderController;
+        private readonly IMediator _mediator;
+        private readonly ISender _sender;
 
-        public ValuesController()
+        public ValuesController(IMediator mediator, ISender sender)
         {
-            _orderController = null;
+            _mediator = mediator;
+            _sender = sender;
         }
 
         [HttpGet("list")]
-        public string GetValues()
+        public async Task<string> GetValues()
         {
-            _orderController?.CreateOrder(new PublicApi.Dto.CreateOrderRequestDto { CustomerFullName = "maks", OrderAmount = 42 });
+            var cmd = new CreateOrderCommand(42, "Maks");
 
-            return "1,2,3";
+            var id = await _mediator.Send(cmd);
+            await _sender.Send(cmd);
+
+            return $"1,2,3, {id}";
         }
     }
 }

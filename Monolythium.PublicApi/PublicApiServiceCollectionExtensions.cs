@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Monolythium.PublicApi.Controllers;
-using Monolythium.PublicApi.Services.Handlers;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using Monolythium.PublicApi.CommandProcessing.Orders;
 
 namespace Monolythium.PublicApi
 {
@@ -8,10 +8,7 @@ namespace Monolythium.PublicApi
     {
         public static IServiceCollection AddPublicApi(this IServiceCollection services)
         {
-            services.AddScoped<IOrderController, OrderController>();
-            services.AddScoped<CreateOrderHandler>();
-
-            // TODO: use MediatR instead of IRequestHandlersFactory
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<CreateOrderCommand>());
 
             return services;
         }
