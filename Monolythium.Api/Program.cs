@@ -1,7 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using Monolythium.PublicApi;
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+var builder = WebApplication.CreateBuilder();
+builder.Host.UseServiceProviderFactory(new NinjectServiceProviderFactory(services => services.BuildServiceProvider()));
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -17,9 +19,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGet("/", () => "Hello World!");
+    endpoints.MapControllers();
+});
 
-app.MapRazorPages();
 
 app.Run();
+
+
